@@ -5,7 +5,6 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: test
+      - name: cargo-build
         run: |
-          rustc --version && \
-          cargo --version
+          cargo build --release
