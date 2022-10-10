@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     container: rust
       volumes:
-        - ${{ github.workspace }}:/home/rust/src
+        - /home/runner/work/rocket/rocket/:/home/rust/src
       working-directory: /home/rust/src
     steps:
       - name: check
