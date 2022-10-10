@@ -1,13 +1,24 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+on:
+  push:
+    branches: 
+      - main
+defaults:
+  run:
+    shell: bash
+    working-directory: ${{ github.workspace }}
 jobs:
-  Explore-GitHub-Actions:
+  rust-build:
     runs-on: ubuntu-latest
     container: rust
     steps:
       - name: check
-        run: ls -al
+        run: ls ${{ github.workspace }}
+      - name: check-2
+        run: |
+          pwd && \
+          ls -al
       - name: cargo-build
         run: |
           cargo build --release
