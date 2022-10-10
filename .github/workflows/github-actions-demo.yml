@@ -4,10 +4,6 @@ on:
   push:
     branches: 
       - main
-defaults:
-  run:
-    shell: bash
-    working-directory: ${{ github.workspace }}
 jobs:
   rust-build:
     runs-on: ubuntu-latest
