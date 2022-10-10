@@ -10,21 +10,8 @@ jobs:
     container: 
       image: rust
       volumes:
-        - /home/runner/work/rocket/rocket/:/rust/src
+        - /home/runner/work/rocket/rocket/:/__w/rocket/rocket
     steps:
-      - name: check
-        run: |
-          pwd && \
-          ls -al
-      - name: cd
-        run: |
-          cd && \
-          pwd && \
-          ls -al
-      - name: check-2
-        run: |
-          pwd && \
-          ls -al
       - name: cargo-build
         run: |
           cargo build --release
