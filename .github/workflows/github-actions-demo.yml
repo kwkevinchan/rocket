@@ -7,11 +7,13 @@ on:
 jobs:
   rust-build:
     runs-on: ubuntu-latest
-    container: 
-      image: rust
-      volumes:
-        - /home/runner/work/rocket/rocket/:/__w/rocket/rocket
     steps:
+      - name: Setup | Checkout
+        uses: actions/checkout@v2
+      - name: Setup | Rust
+        uses: ATiltedTree/setup-rust@v1
+        with:
+          rust-version: stable
       - name: cargo-build
         run: |
           cargo build --release
